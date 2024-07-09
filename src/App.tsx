@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+export function App() {
+	return (
+		<main className='App'>
+			<div className='main-container'>
+				<p>Convide seus amigos e planeje sua próxima viagem!</p>
 
-function App() {
-  const [count, setCount] = useState(0)
+				<div className='input-container'>
+					<input type='text' placeholder='Para onde você vai?' />
+					<input type='text' placeholder='Quando?' />
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+					<button>Continuar</button>
+				</div>
+
+				<span>
+					Ao planejar sua viagem pela plann.er você
+					automaticamente concorda <br /> com nossos{' '}
+					<a href='#'>termos de uso</a> e{' '}
+					<a href='#'>políticas de privacidade</a>.
+				</span>
+			</div>
+		</main>
+	);
 }
-
-export default App

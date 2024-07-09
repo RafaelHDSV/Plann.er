@@ -1,68 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/*   font-family: "Inter", sans-serif; */
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	--light-green: #bef264;
+	--dark-green: #1a2e05;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+	--white: #ffffff;
+	--gray-50: #fafafa;
+	--gray-100: #f4f4f5;
+	--gray-200: #e4e4e7;
+	--gray-300: #d4d4d8;
+	--gray-400: #a1a1aa;
+	--gray-500: #71717a;
+	--gray-700: #3f3f46;
+	--gray-800: #27272a;
+	--gray-900: #18181b;
+	--black: #09090b;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+}
+
+.App {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--black);
+	color: var(--gray-50);
+}
+
+.main-container {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	text-align: center;
+	max-width: 48rem;
+	padding: 1.5rem;
+}
+
+p {
+	font-size: 18px;
+	color: var(--gray-300);
+}
+
+.input-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 45rem;
+	width: 100vw;
+	max-height: 4rem;
+	height: 100vh;
+	background-color: var(--gray-900);
+	border-radius: 0.7rem;
+	box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1),
+		0px 2px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1),
+		inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03),
+		inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+}
+
+span {
+	font-size: 14px;
+	color: var(--gray-500);
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+	color: var(--gray-300);
+	text-decoration: underline;
 }
