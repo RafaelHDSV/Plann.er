@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 import {
 	MapPin,
@@ -14,6 +14,34 @@ import {
 export function App() {
 	const [guestContainerVisible, setGuestContainerVisible] = useState(false);
 	const [emailContainerVisible, setEmailContainerVisible] = useState(false);
+	const [emails, setEmails] = useState(['rafaelvieira1720@gmail.com']);
+
+	function addEmail(event: FormEvent<HTMLFormElement>) {
+		event.preventDefault();
+
+		const data = new FormData(event.currentTarget);
+		const email = data.get('email')?.toString();
+
+		if (!email) {
+			return;
+		}
+
+		if (emails.includes(email)) {
+			return;
+		}
+
+		setEmails([...emails, email]);
+
+		event.currentTarget.reset();
+	}
+
+	function removeEmail(emailToRemove: string) {
+		const newEmailList = emails.filter(
+			(email) => email !== emailToRemove
+		);
+
+		setEmails(newEmailList);
+	}
 
 	return (
 		<main className='App'>
@@ -134,38 +162,37 @@ export function App() {
 						</header>
 
 						<div className='emails'>
-							<div className='email'>
-								<span>jessica.white44@yahoo.com</span>
-								<button className='input-icon'>
-									<X size={'1rem'} />
-								</button>
-							</div>
-							<div className='email'>
-								<span>jessica.white44@yahoo.com</span>
-								<button className='input-icon'>
-									<X size={'1rem'} />
-								</button>
-							</div>
-							<div className='email'>
-								<span>jessica.white44@yahoo.com</span>
-								<button className='input-icon'>
-									<X size={'1rem'} />
-								</button>
-							</div>
+							{emails.map((email) => (
+								<div className='email' key={email}>
+									<span>{email}</span>
+
+									<button className='input-icon'>
+										<X
+											onClick={() =>
+												removeEmail(email)
+											}
+											size={'1rem'}
+										/>
+									</button>
+								</div>
+							))}
 						</div>
 
-						<form>
+						<form onSubmit={addEmail}>
 							<AtSign
 								className='input-icon'
 								size={'1rem'}
 							/>
 
 							<input
-								type='text'
+								type='email'
+								name='email'
 								placeholder='Digite o email do convidado'
 							/>
 
-							<button className='primary-button'>
+							<button
+								type='submit'
+								className='primary-button'>
 								Convidar
 								<Plus className='input-icon' />
 							</button>
