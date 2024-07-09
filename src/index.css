@@ -72,6 +72,8 @@ p {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	width: 100%;
+	gap: 1rem;
 }
 
 .search-container .input-container .input {
@@ -80,11 +82,16 @@ p {
 	justify-content: flex-start;
 	align-items: center;
 	gap: 0.5rem;
+	width: 30%;
+}
+
+.search-container .input-container .input:first-child {
+	width: 100%;
 }
 
 .search-container .input-container .input:last-child {
-	width: 40%;
 	border-right: 1px solid var(--gray-800);
+	padding-right: 1.5rem;
 }
 
 .search-container .input-container input {
@@ -93,6 +100,7 @@ p {
 	background: transparent;
 	font-size: 18px;
 	color: var(--gray-100);
+	width: 100%;
 }
 
 .search-container .input-container input::placeholder {
