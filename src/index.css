@@ -23,6 +23,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: 'Inter', sans-serif;
+	user-select: none;
 }
 
 .App {
@@ -53,12 +54,21 @@ p {
 	color: var(--gray-300);
 }
 
-.search-container {
+.containers {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.primary-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 0.8rem 1.5rem;
 	gap: 2rem;
+	width: 100%;
 	background-color: var(--gray-900);
 	border-radius: 0.7rem;
 	box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1),
@@ -67,7 +77,7 @@ p {
 		inset 0px 1px 0px rgba(255, 255, 255, 0.03);
 }
 
-.search-container .input-container {
+.primary-container .input-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -76,7 +86,7 @@ p {
 	gap: 1rem;
 }
 
-.search-container .input-container .input {
+.primary-container .input-container .input {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -85,37 +95,42 @@ p {
 	width: 30%;
 }
 
-.search-container .input-container .input:first-child {
+.primary-container .input-container .input:first-child {
 	width: 100%;
 }
 
-.search-container .input-container .input:last-child {
+.primary-container .input-container .input:last-child {
 	border-right: 1px solid var(--gray-800);
 	padding-right: 1.5rem;
 }
 
-.search-container .input-container input {
+.primary-container .input-container input {
 	outline: 0;
 	border: none;
 	background: transparent;
-	font-size: 18px;
+	font-size: 16px;
 	color: var(--gray-100);
 	width: 100%;
 }
 
-.search-container .input-container input::placeholder {
+.primary-container .input-container input::placeholder {
 	color: var(--gray-400);
 }
 
-.search-container .input-container .input-icon {
-	color: var(--gray-400);
+.input-icon {
 	width: 1.25rem;
 }
 
-.search-container button {
+.primary-container .input-container .input-icon {
+	color: var(--gray-400);
+}
+
+.primary-button,
+.secundary-button {
 	outline: 0;
 	border: none;
 	display: flex;
+	text-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
 	gap: 0.25rem;
@@ -129,13 +144,158 @@ p {
 	transition: 200ms all ease;
 }
 
-.search-container button:hover {
+.primary-button:hover,
+.secundary-button:hover {
 	opacity: 0.7;
 }
 
-.search-container .input-icon {
+.primary-container .secundary-button {
+	background-color: var(--gray-800);
+	color: var(--gray-200);
+}
+
+.primary-button .input-icon {
 	color: var(--black);
-	width: 1.25rem;
+}
+
+.secundary-button .input-icon,
+.email-container header button .input-icon {
+	color: var(--gray-200);
+}
+
+.who-button {
+	outline: 0;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	background: transparent;
+	cursor: pointer;
+	transition: 200ms all ease;
+}
+
+.who-button span {
+	color: var(--gray-400);
+	font-size: 16px;
+}
+
+.email-effect {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--black);
+	opacity: 80%;
+}
+
+.email-container {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1rem;
+	max-width: 40rem;
+	width: 100%;
+	padding: 1.25rem 1.5rem;
+	gap: 2rem;
+	background-color: var(--gray-900);
+	color: var(--white);
+	box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1),
+		0px 2px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1),
+		inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03),
+		inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+	z-index: 999;
+}
+
+.email-container header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.email-container header .text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.email-container header .text h2 {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.email-container header .text span {
+	font-size: 14px;
+	color: var(--gray-400);
+}
+
+.email-container header button,
+.email-container .emails button {
+	outline: 0;
+	border: none;
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: 200ms all ease;
+}
+
+.email-container .emails {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	border-bottom: 1px solid var(--gray-800);
+	padding-bottom: 1rem;
+	width: 100%;
+}
+
+.email-container .email {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	background-color: var(--gray-800);
+	border-radius: 0.5rem;
+	padding: 0.375rem 0.625rem;
+}
+
+.email-container .email span {
+	color: var(--gray-300);
+}
+
+.email-container .email .input-icon,
+.email-container form .input-icon {
+	color: var(--gray-400);
+}
+
+.email-container form {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem;
+	background-color: var(--black);
+	border: 1px solid var(--gray-800);
+	border-radius: 0.5rem;
+	width: 100%;
+	gap: 0.5rem;
+}
+
+.email-container form input {
+	outline: 0;
+	border: none;
+	background: transparent;
+	font-size: 16px;
+	color: var(--gray-100);
+	width: 100%;
+}
+
+.email-container form button .input-icon {
+	color: var(--black);
 }
 
 span {
