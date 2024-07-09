@@ -9,11 +9,15 @@ import {
 	X,
 	AtSign,
 	Plus,
+	Mail,
+	User,
 } from 'lucide-react';
 
 export function App() {
 	const [guestContainerVisible, setGuestContainerVisible] = useState(false);
 	const [emailContainerVisible, setEmailContainerVisible] = useState(false);
+	const [confirmContainerVisible, setConfirmContainerVisible] =
+		useState(false);
 	const [emails, setEmails] = useState(['rafaelvieira1720@gmail.com']);
 
 	function addEmail(event: FormEvent<HTMLFormElement>) {
@@ -118,11 +122,24 @@ export function App() {
 										<UserRoundPlus className='input-icon'></UserRoundPlus>
 									</label>
 
-									<span>Quem estará na viagem?</span>
+									{emails.length > 1 ? (
+										<span className='peoples'>
+											{emails.length} pessoa(s)
+											convidada(s){' '}
+										</span>
+									) : (
+										<span>
+											Quem estará na viagem?
+										</span>
+									)}
 								</button>
 							</div>
 
-							<button className='primary-button'>
+							<button
+								onClick={() => {
+									setConfirmContainerVisible(true);
+								}}
+								className='primary-button'>
 								Confirmar Viagem{' '}
 								<ArrowRight className='input-icon' />
 							</button>
@@ -195,6 +212,65 @@ export function App() {
 								className='primary-button'>
 								Convidar
 								<Plus className='input-icon' />
+							</button>
+						</form>
+					</div>
+				</>
+			)}
+
+			{confirmContainerVisible && (
+				<>
+					<div className='confirm-effect'></div>
+
+					<div className='confirm-container'>
+						<header>
+							<div className='text'>
+								<h2>Confirmar criação da viagem</h2>
+								<span>
+									Para concluir a criação da viagem
+									para{' '}
+									<strong>
+										Florianópolis, Brasil
+									</strong>{' '}
+									nas datas de{' '}
+									<strong>
+										16 a 27 de Agosto de 2024
+									</strong>{' '}
+									preencha seus dados abaixo:
+								</span>
+							</div>
+
+							<button
+								onClick={() => {
+									setConfirmContainerVisible(false);
+								}}>
+								<X className='input-icon' />
+							</button>
+						</header>
+
+						<form>
+							<div className='input-container'>
+								<User className='input-icon' />
+								<input
+									type='text'
+									name='text'
+									placeholder='Seu nome completo'
+								/>
+							</div>
+
+							<div className='input-container'>
+								<Mail className='input-icon' />
+								<input
+									type='email'
+									name='email'
+									placeholder='Seu e-mail pessoal'
+								/>
+							</div>
+
+							<button
+								type='submit'
+								className='primary-button'>
+								Confirmar criação da viagem
 							</button>
 						</form>
 					</div>
