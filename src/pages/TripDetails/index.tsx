@@ -1,6 +1,14 @@
+import { useState } from 'react';
+
 import { Calendar, CircleCheck, MapPin, Plus, Settings2 } from 'lucide-react';
 
+import { CreateActivity } from './CreateActivity';
+import { ImportantLinks } from './ImportantLinks';
+import { Guests } from './Guests';
+
 export function TripDetails() {
+	const [createActivity, setCreateActivity] = useState(false);
+
 	return (
 		<div id='trip-details'>
 			<header>
@@ -26,7 +34,11 @@ export function TripDetails() {
 				<div className='activities'>
 					<header>
 						<h2>Atividades</h2>
-						<button className='primary-button'>
+						<button
+							onClick={() => {
+								setCreateActivity(true);
+							}}
+							className='primary-button'>
 							<Plus className='input-icon' />
 							Cadastrar Atividade
 						</button>
@@ -78,8 +90,16 @@ export function TripDetails() {
 					</div>
 				</div>
 
-				<aside>b</aside>
+				<aside>
+					<ImportantLinks />
+
+					<Guests />
+				</aside>
 			</main>
+
+			{createActivity && (
+				<CreateActivity setCreateActivity={setCreateActivity} />
+			)}
 		</div>
 	);
 }
