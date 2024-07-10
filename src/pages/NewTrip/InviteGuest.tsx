@@ -19,7 +19,7 @@ export function InviteGuest(props: InviteGuestProps) {
 						<UserRoundPlus className='input-icon'></UserRoundPlus>
 					</label>
 
-					{props.emails.length > 1 ? (
+					{props.emails.length > 0 ? (
 						<span className='peoples'>
 							{props.emails.length} pessoa(s) convidada(s){' '}
 						</span>

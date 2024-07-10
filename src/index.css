@@ -54,7 +54,7 @@ p {
 	color: var(--gray-300);
 }
 
-.containers {
+.steps {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -121,10 +121,6 @@ p {
 	width: 1.25rem;
 }
 
-.primary-container .input-container .input-icon {
-	color: var(--gray-400);
-}
-
 .primary-button,
 .secundary-button {
 	outline: 0;
@@ -149,18 +145,8 @@ p {
 	opacity: 0.7;
 }
 
-.primary-container .secundary-button {
+.secundary-button {
 	background-color: var(--gray-800);
-	color: var(--gray-200);
-}
-
-.primary-button .input-icon {
-	color: var(--black);
-}
-
-.secundary-button .input-icon,
-.email-container header button .input-icon,
-.confirm-container header button .input-icon {
 	color: var(--gray-200);
 }
 
@@ -280,11 +266,6 @@ p {
 	color: var(--gray-300);
 }
 
-.email-container .email .input-icon,
-.email-container form .input-icon {
-	color: var(--gray-400);
-}
-
 .email-container form {
 	display: flex;
 	align-items: center;
@@ -303,10 +284,6 @@ p {
 	font-size: 16px;
 	color: var(--gray-100);
 	width: 100%;
-}
-
-.email-container form button .input-icon {
-	color: var(--black);
 }
 
 span {
@@ -421,4 +398,67 @@ a {
 	font-size: 16px;
 	color: var(--gray-100);
 	width: 100%;
+}
+
+/* TRIP DETAILS */
+
+#trip-details {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--black);
+	padding: 2.5rem 10.5rem;
+}
+
+#trip-details header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	background-color: var(--gray-900);
+	box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1),
+		0px 2px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1),
+		inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03),
+		inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+}
+
+#trip-details header div {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#trip-details header span {
+	font-size: 16px;
+	color: var(--gray-100);
+}
+
+#trip-details header .date-and-change {
+	display: flex;
+	gap: 2rem;
+}
+
+#trip-details header .date {
+	border-right: 1px solid var(--gray-800);
+	padding-right: 1.5rem;
+}
+
+/* INPUT ICON */
+
+.secundary-button .input-icon,
+.email-container header button .input-icon,
+.confirm-container header button .input-icon {
+	color: var(--gray-200);
+}
+
+.email-container .email .input-icon,
+.email-container form .input-icon,
+#trip-details header .input-icon,
+.primary-container .input-container .input-icon {
+	color: var(--gray-400);
+}
+
+.primary-button .input-icon,
+.email-container form button .input-icon {
+	color: var(--black);
 }

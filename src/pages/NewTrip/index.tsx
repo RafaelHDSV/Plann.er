@@ -51,14 +51,15 @@ export function NewTrip() {
 	return (
 		<main className='App'>
 			<div className='main-container'>
-				<div className='logo'>
+				<div>
 					<img src='/logo.svg' alt='logo.svg' />
+
 					<p>
 						Convide seus amigos e planeje sua próxima viagem!
 					</p>
 				</div>
 
-				<div className='containers'>
+				<div className='steps'>
 					<DestinationAndDate
 						guestContainerVisible={guestContainerVisible}
 						setGuestContainerVisible={
