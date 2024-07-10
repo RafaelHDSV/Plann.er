@@ -1,4 +1,5 @@
 import { Calendar, Tag, X } from 'lucide-react';
+import { PrimaryButton } from '../../components/PrimaryButton';
 
 interface CreateActivityProps {
 	setCreateActivity: (string: boolean) => void;
@@ -46,9 +47,9 @@ export function CreateActivity(props: CreateActivityProps) {
 						/>
 					</div>
 
-					<button type='submit' className='primary-button'>
+					<PrimaryButton type='submit'>
 						Salvar atividade
-					</button>
+					</PrimaryButton>
 				</form>
 			</div>
 		</>

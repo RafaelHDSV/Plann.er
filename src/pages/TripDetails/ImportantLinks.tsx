@@ -1,4 +1,5 @@
 import { Link2, Plus } from 'lucide-react';
+import { SecundaryButton } from '../../components/SecundaryButton';
 
 export function ImportantLinks() {
 	return (
@@ -31,10 +32,10 @@ export function ImportantLinks() {
 				</div>
 			</div>
 
-			<button className='secundary-button'>
+			<SecundaryButton>
 				<Plus className='input-icon' />
 				Cadastrar novo link
-			</button>
+			</SecundaryButton>
 		</div>
 	);
 }

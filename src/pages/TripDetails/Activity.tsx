@@ -1,4 +1,5 @@
 import { Plus, CircleCheck } from 'lucide-react';
+import { PrimaryButton } from '../../components/PrimaryButton';
 
 interface ActivityProps {
 	setCreateActivity: (string: boolean) => void;
@@ -9,14 +10,14 @@ export function Activity(props: ActivityProps) {
 		<div className='activities'>
 			<header>
 				<h2>Atividades</h2>
-				<button
+
+				<PrimaryButton
 					onClick={() => {
 						props.setCreateActivity(true);
-					}}
-					className='primary-button'>
+					}}>
 					<Plus className='input-icon' />
 					Cadastrar Atividade
-				</button>
+				</PrimaryButton>
 			</header>
 
 			<div className='days'>

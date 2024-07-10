@@ -1,5 +1,6 @@
 import { FormEvent } from 'react';
 import { Mail, User, X } from 'lucide-react';
+import { PrimaryButton } from '../../components/PrimaryButton';
 
 interface ConfirmContainerProps {
 	setConfirmContainerVisible: (string: boolean) => void;
@@ -51,9 +52,9 @@ export function ConfirmContainer(props: ConfirmContainerProps) {
 						/>
 					</div>
 
-					<button type='submit' className='primary-button'>
+					<PrimaryButton type='submit'>
 						Confirmar criação da viagem
-					</button>
+					</PrimaryButton>
 				</form>
 			</div>
 		</>

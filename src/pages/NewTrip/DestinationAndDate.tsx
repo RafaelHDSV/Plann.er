@@ -1,4 +1,6 @@
 import { ArrowRight, Calendar, MapPin, Settings2 } from 'lucide-react';
+import { SecundaryButton } from '../../components/SecundaryButton';
+import { PrimaryButton } from '../../components/PrimaryButton';
 
 interface DestinationAndDateProps {
 	guestContainerVisible: boolean;
@@ -37,22 +39,20 @@ export function DestinationAndDate(props: DestinationAndDateProps) {
 			</div>
 
 			{props.guestContainerVisible ? (
-				<button
-					className='secundary-button'
+				<SecundaryButton
 					onClick={() => {
 						props.setGuestContainerVisible(false);
 					}}>
 					Alterar local/data
 					<Settings2 className='input-icon' />
-				</button>
+				</SecundaryButton>
 			) : (
-				<button
-					className='primary-button'
+				<PrimaryButton
 					onClick={() => {
 						props.setGuestContainerVisible(true);
 					}}>
 					Continuar <ArrowRight className='input-icon' />
-				</button>
+				</PrimaryButton>
 			)}
 		</div>
 	);

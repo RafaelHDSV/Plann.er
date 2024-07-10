@@ -1,5 +1,7 @@
 import { MapPin, Calendar, Settings2 } from 'lucide-react';
 
+import { SecundaryButton } from '../../components/SecundaryButton';
+
 export function DestinationHeader() {
 	return (
 		<header>
@@ -14,10 +16,10 @@ export function DestinationHeader() {
 					<span>17 a 23 de agosto</span>
 				</div>
 
-				<button className='secundary-button'>
+				<SecundaryButton>
 					Alterar local/data
 					<Settings2 className='input-icon' />
-				</button>
+				</SecundaryButton>
 			</div>
 		</header>
 	);

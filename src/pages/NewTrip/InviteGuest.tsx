@@ -1,4 +1,5 @@
 import { ArrowRight, UserRoundPlus } from 'lucide-react';
+import { PrimaryButton } from '../../components/PrimaryButton';
 
 interface InviteGuestProps {
 	setEmailContainerVisible: (string: boolean) => void;
@@ -29,13 +30,12 @@ export function InviteGuest(props: InviteGuestProps) {
 				</button>
 			</div>
 
-			<button
+			<PrimaryButton
 				onClick={() => {
 					props.setConfirmContainerVisible(true);
-				}}
-				className='primary-button'>
+				}}>
 				Confirmar Viagem <ArrowRight className='input-icon' />
-			</button>
+			</PrimaryButton>
 		</div>
 	);
 }

@@ -1,5 +1,6 @@
 import { FormEvent } from 'react';
 import { AtSign, Plus, X } from 'lucide-react';
+import { PrimaryButton } from '../../components/PrimaryButton';
 
 interface EmailContainerProps {
 	setEmailContainerVisible: (string: boolean) => void;
@@ -57,10 +58,10 @@ export function EmailContainer(props: EmailContainerProps) {
 						placeholder='Digite o email do convidado'
 					/>
 
-					<button type='submit' className='primary-button'>
+					<PrimaryButton type='submit'>
 						Convidar
 						<Plus className='input-icon' />
-					</button>
+					</PrimaryButton>
 				</form>
 			</div>
 		</>
