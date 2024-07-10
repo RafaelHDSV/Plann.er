@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ArrowRight, Calendar, MapPin, Settings2, X } from 'lucide-react';
 
 import { DateRange, DayPicker } from 'react-day-picker';
+import { format } from 'date-fns';
 import 'react-day-picker/dist/style.css';
 
 import { PrimaryButton } from '../../components/PrimaryButton';
@@ -16,6 +17,13 @@ interface DestinationAndDateProps {
 export function DestinationAndDate(props: DestinationAndDateProps) {
 	const [datePickerVisible, setDatePickerVisible] = useState(false);
 	const [date, setDate] = useState<DateRange | undefined>();
+
+	const displayedDate =
+		date && date.from && date.to
+			? format(date.from, "dd' de 'LLL")
+					.concat(' até ')
+					.concat(format(date.to, "dd' de 'LLL"))
+			: null;
 
 	return (
 		<div className='primary-container'>
@@ -40,7 +48,7 @@ export function DestinationAndDate(props: DestinationAndDateProps) {
 						setDatePickerVisible(true);
 					}}>
 					<Calendar className='input-icon'></Calendar>
-					<span>Quando?</span>
+					<span>{displayedDate || 'Quando?'}</span>
 				</button>
 			</div>
 

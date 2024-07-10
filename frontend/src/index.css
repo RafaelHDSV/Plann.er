@@ -98,11 +98,7 @@ p {
 	justify-content: flex-start;
 	align-items: center;
 	gap: 0.5rem;
-	width: 30%;
-}
-
-.primary-container .input-container .input:first-child {
-	width: 100%;
+	width: auto;
 }
 
 .primary-container .input-container .input:last-child {
@@ -123,6 +119,7 @@ p {
 
 .primary-container .input-container input::placeholder,
 .primary-container .input-container button span {
+	text-wrap: nowrap;
 	font-size: 16px;
 	color: var(--gray-400);
 }
@@ -165,7 +162,7 @@ p {
 	border: none;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	gap: 0.5rem;
 	background: transparent;
