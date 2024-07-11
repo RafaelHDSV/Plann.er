@@ -72,8 +72,8 @@ export function NewTrip() {
 		}
 
 		const response = await api.post('/trips', {
-			destination: destination,
-			start_at: date.from,
+			destination,
+			starts_at: date.from,
 			ends_at: date.to,
 			emails_to_invite: emails,
 			owner_name: ownerName,
