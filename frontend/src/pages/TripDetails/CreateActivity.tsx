@@ -1,14 +1,29 @@
 import { Calendar, Tag, X } from 'lucide-react';
 import { PrimaryButton } from '../../components/PrimaryButton';
 import { FormEvent } from 'react';
+import { api } from '../../lib/axios';
+import { useParams } from 'react-router-dom';
 
 interface CreateActivityProps {
 	setCreateActivity: (string: boolean) => void;
 }
 
 export function CreateActivity(props: CreateActivityProps) {
-	function createActivityFunction(e: FormEvent<HTMLFormElement>) {
+	const { tripId } = useParams();
+
+	async function createActivityFunction(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault();
+
+		const data = new FormData(e.currentTarget);
+		const title = data.get('title')?.toString();
+		const occurs_at = data.get('occurs_at')?.toString();
+
+		await api.post(`trips/${tripId}/activities`, {
+			title,
+			occurs_at,
+		});
+
+		window.document.location.reload();
 	}
 
 	return (
@@ -47,7 +62,7 @@ export function CreateActivity(props: CreateActivityProps) {
 						<Calendar className='input-icon' />
 						<input
 							type='datetime-local'
-							name='email'
+							name='occurs_at'
 							placeholder='Data e horário da atividade'
 						/>
 					</div>
