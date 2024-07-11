@@ -7,6 +7,7 @@ import { ConfirmContainer } from './ConfirmContainer';
 import { DestinationAndDate } from './DestinationAndDate';
 import { InviteGuest } from './InviteGuest';
 import { api } from '../../lib/axios';
+import { format } from 'date-fns';
 
 export function NewTrip() {
 	// navegação de rotas
@@ -51,6 +52,13 @@ export function NewTrip() {
 
 		setEmails(newEmailList);
 	}
+
+	const displayedDate =
+		date && date.from && date.to
+			? format(date.from, "dd' de 'LLL")
+					.concat(' até ')
+					.concat(format(date.to, "dd' de 'LLL"))
+			: null;
 
 	async function createTrip(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
@@ -142,6 +150,8 @@ export function NewTrip() {
 					setConfirmContainerVisible={setConfirmContainerVisible}
 					setOwnerName={setOwnerName}
 					setOwnerEmail={setOwnerEmail}
+					destination={destination}
+					displayedDate={displayedDate}
 				/>
 			)}
 		</main>

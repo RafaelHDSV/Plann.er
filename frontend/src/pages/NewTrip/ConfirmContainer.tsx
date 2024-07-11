@@ -7,6 +7,8 @@ interface ConfirmContainerProps {
 	createTrip: (event: FormEvent<HTMLFormElement>) => void;
 	setOwnerName: (name: string) => void;
 	setOwnerEmail: (email: string) => void;
+	destination: string;
+	displayedDate: string | null;
 }
 
 export function ConfirmContainer(props: ConfirmContainerProps) {
@@ -20,9 +22,9 @@ export function ConfirmContainer(props: ConfirmContainerProps) {
 						<h2>Confirmar criação da viagem</h2>
 						<span>
 							Para concluir a criação da viagem para{' '}
-							<strong>Florianópolis, Brasil</strong> nas
+							<strong>{props.destination}</strong> nas
 							datas de{' '}
-							<strong>16 a 27 de Agosto de 2024</strong>{' '}
+							<strong>{props.displayedDate}</strong>{' '}
 							preencha seus dados abaixo:
 						</span>
 					</div>
