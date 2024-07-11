@@ -1,11 +1,16 @@
 import { Calendar, Tag, X } from 'lucide-react';
 import { PrimaryButton } from '../../components/PrimaryButton';
+import { FormEvent } from 'react';
 
 interface CreateActivityProps {
 	setCreateActivity: (string: boolean) => void;
 }
 
 export function CreateActivity(props: CreateActivityProps) {
+	function createActivityFunction(e: FormEvent<HTMLFormElement>) {
+		e.preventDefault();
+	}
+
 	return (
 		<>
 			<div className='create-activity-effect'></div>
@@ -28,7 +33,7 @@ export function CreateActivity(props: CreateActivityProps) {
 					</button>
 				</div>
 
-				<form>
+				<form onSubmit={createActivityFunction}>
 					<div className='input-container'>
 						<Tag className='input-icon' />
 						<input
