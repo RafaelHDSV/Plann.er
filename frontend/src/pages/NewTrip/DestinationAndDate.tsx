@@ -59,7 +59,7 @@ export function DestinationAndDate(props: DestinationAndDateProps) {
 
 			{datePickerVisible && (
 				<>
-					<div className='date-effect'></div>
+					<div className='effect'></div>
 
 					<div className='date-container'>
 						<header>

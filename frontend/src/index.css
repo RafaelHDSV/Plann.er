@@ -124,39 +124,6 @@ p {
 	color: var(--gray-400);
 }
 
-.input-icon {
-	width: 1.25rem;
-}
-
-.primary-button,
-.secundary-button {
-	outline: 0;
-	border: none;
-	display: flex;
-	text-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	gap: 0.25rem;
-	background-color: var(--light-green);
-	color: var(--black);
-	border-radius: 0.5rem;
-	padding: 0.5rem 1.5rem;
-	font-size: 16;
-	font-weight: 500;
-	cursor: pointer;
-	transition: 200ms all ease;
-}
-
-.primary-button:hover,
-.secundary-button:hover {
-	opacity: 0.7;
-}
-
-.secundary-button {
-	background-color: var(--gray-800);
-	color: var(--gray-200);
-}
-
 .who-button {
 	outline: 0;
 	border: none;
@@ -178,14 +145,6 @@ p {
 .who-button .peoples {
 	color: var(--gray-100);
 	font-size: 16px;
-}
-
-.email-effect {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	background-color: var(--black);
-	opacity: 80%;
 }
 
 .email-container {
@@ -303,14 +262,6 @@ a {
 	text-decoration: underline;
 }
 
-.confirm-effect {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	background-color: var(--black);
-	opacity: 80%;
-}
-
 .confirm-container,
 .date-container {
 	position: fixed;
@@ -374,11 +325,6 @@ a {
 	transition: 200ms all ease;
 }
 
-.confirm-container .primary-button {
-	padding: 0.8rem 0;
-	width: 100%;
-}
-
 .confirm-container form {
 	display: flex;
 	flex-direction: column;
@@ -406,14 +352,6 @@ a {
 	font-size: 16px;
 	color: var(--gray-100);
 	width: 100%;
-}
-
-.date-effect {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	background-color: var(--black);
-	opacity: 80%;
 }
 
 .date-container {
@@ -461,11 +399,6 @@ a {
 	align-items: center;
 	cursor: pointer;
 	transition: 200ms all ease;
-}
-
-.date-container .primary-button {
-	padding: 0.8rem 0;
-	width: 100%;
 }
 
 .date-container form {
@@ -737,14 +670,6 @@ a {
 	color: var(--gray-400);
 }
 
-.create-activity-effect {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	background-color: var(--black);
-	opacity: 80%;
-}
-
 .create-activity-container {
 	position: fixed;
 	top: 50%;
@@ -810,11 +735,6 @@ a {
 	transition: 200ms all ease;
 }
 
-.create-activity-container .primary-button {
-	padding: 0.8rem 0;
-	width: 100%;
-}
-
 .create-activity-container form {
 	display: flex;
 	flex-direction: column;
@@ -845,7 +765,21 @@ a {
 	color-scheme: dark;
 }
 
+/* MODAL */
+
+.effect {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--black);
+	opacity: 80%;
+}
+
 /* INPUT ICON */
+
+.input-icon {
+	width: 1.25rem;
+}
 
 .secundary-button .input-icon,
 .email-container header button .input-icon,
@@ -872,4 +806,42 @@ a {
 
 #trip-details main .activities .days .day .activitie-day .input-icon {
 	color: var(--light-green);
+}
+
+/* BUTTON */
+
+.primary-button,
+.secundary-button {
+	outline: 0;
+	border: none;
+	display: flex;
+	text-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25rem;
+	background-color: var(--light-green);
+	color: var(--black);
+	border-radius: 0.5rem;
+	padding: 0.5rem 1.5rem;
+	font-size: 16;
+	font-weight: 500;
+	cursor: pointer;
+	transition: 200ms all ease;
+}
+
+.primary-button:hover,
+.secundary-button:hover {
+	opacity: 0.7;
+}
+
+.secundary-button {
+	background-color: var(--gray-800);
+	color: var(--gray-200);
+}
+
+.confirm-container .primary-button,
+.date-container .primary-button,
+.create-activity-container .primary-button {
+	padding: 0.8rem 0;
+	width: 100%;
 }

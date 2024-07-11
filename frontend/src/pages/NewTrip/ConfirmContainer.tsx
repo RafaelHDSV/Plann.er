@@ -12,7 +12,7 @@ interface ConfirmContainerProps {
 export function ConfirmContainer(props: ConfirmContainerProps) {
 	return (
 		<>
-			<div className='confirm-effect'></div>
+			<div className='effect'></div>
 
 			<div className='confirm-container'>
 				<header>

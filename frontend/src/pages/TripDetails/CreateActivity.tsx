@@ -13,7 +13,7 @@ export function CreateActivity(props: CreateActivityProps) {
 
 	return (
 		<>
-			<div className='create-activity-effect'></div>
+			<div className='effect'></div>
 
 			<div className='create-activity-container'>
 				<div className='header-create-activity'>

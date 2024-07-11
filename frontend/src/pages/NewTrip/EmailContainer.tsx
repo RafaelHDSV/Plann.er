@@ -12,7 +12,7 @@ interface EmailContainerProps {
 export function EmailContainer(props: EmailContainerProps) {
 	return (
 		<>
-			<div className='email-effect'></div>
+			<div className='effect'></div>
 
 			<div className='email-container'>
 				<header>
