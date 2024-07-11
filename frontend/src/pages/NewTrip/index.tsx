@@ -1,18 +1,28 @@
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { DateRange } from 'react-day-picker';
 
 import { EmailContainer } from './EmailContainer';
 import { ConfirmContainer } from './ConfirmContainer';
 import { DestinationAndDate } from './DestinationAndDate';
 import { InviteGuest } from './InviteGuest';
+import { api } from '../../lib/axios';
 
 export function NewTrip() {
+	// navegação de rotas
 	const navigate = useNavigate();
 
+	// visibilidade de componentes
 	const [guestContainerVisible, setGuestContainerVisible] = useState(false);
 	const [emailContainerVisible, setEmailContainerVisible] = useState(false);
 	const [confirmContainerVisible, setConfirmContainerVisible] =
 		useState(false);
+
+	// informações sobre a viagem
+	const [destination, setDestination] = useState('');
+	const [date, setDate] = useState<DateRange | undefined>();
+	const [ownerName, setOwnerName] = useState('');
+	const [ownerEmail, setOwnerEmail] = useState('');
 	const [emails, setEmails] = useState(['rafaelvieira1720@gmail.com']);
 
 	function addEmail(event: FormEvent<HTMLFormElement>) {
@@ -42,10 +52,36 @@ export function NewTrip() {
 		setEmails(newEmailList);
 	}
 
-	function createTrip(event: FormEvent<HTMLFormElement>) {
+	async function createTrip(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 
-		navigate('/trips/123');
+		if (!destination) {
+			return;
+		}
+
+		if (!date?.from || !date?.to) {
+			return;
+		}
+
+		if (emails.length === 0) {
+			return;
+		}
+
+		if (!ownerEmail || !ownerName) {
+			return;
+		}
+
+		const response = await api.post('/trips', {
+			destination: destination,
+			start_at: date.from,
+			ends_at: date.to,
+			emails_to_invite: emails,
+			owner_name: ownerName,
+			owner_email: ownerEmail,
+		});
+
+		const { tripId } = response.data;
+		navigate(`/trips/${tripId}`);
 	}
 
 	return (
@@ -65,6 +101,9 @@ export function NewTrip() {
 						setGuestContainerVisible={
 							setGuestContainerVisible
 						}
+						setDestination={setDestination}
+						date={date}
+						setDate={setDate}
 					/>
 
 					{guestContainerVisible && (
@@ -101,6 +140,8 @@ export function NewTrip() {
 				<ConfirmContainer
 					createTrip={createTrip}
 					setConfirmContainerVisible={setConfirmContainerVisible}
+					setOwnerName={setOwnerName}
+					setOwnerEmail={setOwnerEmail}
 				/>
 			)}
 		</main>

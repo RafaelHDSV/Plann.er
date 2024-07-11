@@ -12,17 +12,19 @@ import { SecundaryButton } from '../../components/SecundaryButton';
 interface DestinationAndDateProps {
 	guestContainerVisible: boolean;
 	setGuestContainerVisible: (string: boolean) => void;
+	setDestination: (destination: string) => void;
+	date: DateRange | undefined;
+	setDate: (date: DateRange | undefined) => void;
 }
 
 export function DestinationAndDate(props: DestinationAndDateProps) {
 	const [datePickerVisible, setDatePickerVisible] = useState(false);
-	const [date, setDate] = useState<DateRange | undefined>();
 
 	const displayedDate =
-		date && date.from && date.to
-			? format(date.from, "dd' de 'LLL")
+		props.date && props.date.from && props.date.to
+			? format(props.date.from, "dd' de 'LLL")
 					.concat(' até ')
-					.concat(format(date.to, "dd' de 'LLL"))
+					.concat(format(props.date.to, "dd' de 'LLL"))
 			: null;
 
 	return (
@@ -38,6 +40,9 @@ export function DestinationAndDate(props: DestinationAndDateProps) {
 						type='text'
 						placeholder='Para onde você vai?'
 						disabled={props.guestContainerVisible}
+						onChange={(event) =>
+							props.setDestination(event.target.value)
+						}
 					/>
 				</div>
 
@@ -72,8 +77,8 @@ export function DestinationAndDate(props: DestinationAndDateProps) {
 
 						<DayPicker
 							mode='range'
-							selected={date}
-							onSelect={setDate}
+							selected={props.date}
+							onSelect={props.setDate}
 						/>
 					</div>
 				</>

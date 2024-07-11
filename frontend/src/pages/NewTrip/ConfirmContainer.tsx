@@ -5,6 +5,8 @@ import { PrimaryButton } from '../../components/PrimaryButton';
 interface ConfirmContainerProps {
 	setConfirmContainerVisible: (string: boolean) => void;
 	createTrip: (event: FormEvent<HTMLFormElement>) => void;
+	setOwnerName: (name: string) => void;
+	setOwnerEmail: (email: string) => void;
 }
 
 export function ConfirmContainer(props: ConfirmContainerProps) {
@@ -40,6 +42,9 @@ export function ConfirmContainer(props: ConfirmContainerProps) {
 							type='text'
 							name='text'
 							placeholder='Seu nome completo'
+							onChange={(event) =>
+								props.setOwnerName(event.target.value)
+							}
 						/>
 					</div>
 
@@ -49,6 +54,9 @@ export function ConfirmContainer(props: ConfirmContainerProps) {
 							type='email'
 							name='email'
 							placeholder='Seu e-mail pessoal'
+							onChange={(event) =>
+								props.setOwnerEmail(event.target.value)
+							}
 						/>
 					</div>
 
