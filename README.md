@@ -19,11 +19,11 @@
 
 <h2 id="about">📌 About</h2>
 
-{Descrição do projeto}
+Plann.er is a travel planner developed during Rocketseat's NLW Journey. This application allows users to organize their trips efficiently, including entering locations, managing guests, and organizing dates and times. Built with React and TypeScript, Plann.er uses web development best practices to create an intuitive and responsive user experience.
 
 <h2 id="started">🚀 Getting started</h2>
 
-Para esse projeto foram utilizadas diversas bibliotecas como:
+For this project, several libraries were used, such as:
 
 -    Lucide React
 -    React Router Dom
@@ -46,7 +46,7 @@ npm start
 
 <h2 id="routes">📍 Application Routes</h2>
 
-{Introdução breve das rotas da sua aplicação}
+In the project there is a backend, where specific routes are created for each trip, such as:
 ​
 | route | description  
 |----------------------|-----------------------------------------------------
