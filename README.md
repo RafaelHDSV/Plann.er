@@ -8,7 +8,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/RafaelHDSV/Plann.er?style=for-the-badge)
 
 <p align="center">
-    <img src="./public/images/main.png" alt="main.png">
+    <img src="./assets/main.png" alt="main.png">
 </p>
 
 <p align="center">
