@@ -50,30 +50,19 @@ In the project there is a backend, where specific routes are created for each tr
 ​
 | route | description  
 |----------------------|-----------------------------------------------------
-| <kbd>/</kbd> | home page
+| <kbd>/</kbd> | new trip page
+| <kbd>/trips/:tripId</kbd> | trip details page
 
-<!-- | <kbd>/movie</kbd> | page to get more detailed information about the selected film -->
-<!-- | <kbd>/user</kbd> | page to select the user icon -->
-<!-- | <kbd>/_error_</kbd> | page when the route does not exist or is not found -->
-
-<!-- <hr/>
+<hr/>
 
 ### route: <kbd>/</kbd>
 
-<img src="./public/images/root.png"/>
+<img src="./assets/new-trip.png"/>
 
 <hr/>
 
-### route: <kbd>/movie</kbd>
+### route: <kbd>/trips/:tripId</kbd>
 
--    movie
-     <img src="./public/images/movie.png"/>
-
--    tv
-     <img src="./public/images/tv.png"/>
+<img src="./assets/trip-details.png"/>
 
 <hr/>
-
-### route: <kbd>/user</kbd>
-
-<img src="./public/images/user.png"/> -->
