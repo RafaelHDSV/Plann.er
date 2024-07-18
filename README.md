@@ -1,12 +1,12 @@
-# {Seu-Repositório}
+# Plann.er
 
-<!-- ![React language](https://img.shields.io/badge/React-005CFE?style=for-the-badge&logo=react) -->
-<!-- ![Javascript language](https://img.shields.io/badge/Javascript-000?style=for-the-badge&logo=javascript) -->
-<!-- ![CSS language](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) -->
-<!-- ![HTML language](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) -->
+![React language](https://img.shields.io/badge/React-005CFE?style=for-the-badge&logo=react)
+![Typescript language](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![CSS language](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML language](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-![GitHub language count](https://img.shields.io/github/languages/count/RafaelHDSV/{Seu-Repositório}?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/RafaelHDSV/{Seu-Repositório}?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/RafaelHDSV/Plann.er?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/RafaelHDSV/Plann.er?style=for-the-badge)
 
 <p align="center">
     <img src="./public/images/main.gif" alt="Gif Example">
@@ -24,23 +24,24 @@
 
 <h2 id="started">🚀 Getting started</h2>
 
-{Introdução breve do que será necessário para inicializar a aplicação}
-lucide react
-react router dom
-react day picker
-axios
+Para esse projeto foram utilizadas diversas bibliotecas como:
+
+-    Lucide React
+-    React Router Dom
+-    React Day Picker
+-    Axios
 
 <h3>Cloning</h3>
 
 ```bash
-git clone https://github.com/RafaelHDSV/{Seu-Repositório}.git
+git clone https://github.com/RafaelHDSV/Plann.er.git
 npm install
 ```
 
 <h3>Starting</h3>
 
 ```bash
-cd {Seu-Repositório}
+cd Plann.er
 npm start
 ```
 
