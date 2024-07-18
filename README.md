@@ -4,12 +4,11 @@
 ![Typescript language](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![CSS language](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![HTML language](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-
 ![GitHub language count](https://img.shields.io/github/languages/count/RafaelHDSV/Plann.er?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/RafaelHDSV/Plann.er?style=for-the-badge)
 
 <p align="center">
-    <img src="./public/images/main.gif" alt="Gif Example">
+    <img src="./public/images/main.png" alt="main.png">
 </p>
 
 <p align="center">
