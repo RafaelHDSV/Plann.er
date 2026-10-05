@@ -13,9 +13,9 @@
     "@vieira/analytics": "file:./vendor/vieira-analytics",
     "axios": "^1.20.0",
     "date-fns": "^4.4.0",
-    "lucide-react": "^1.48.0",
+    "lucide-react": "^1.50.0",
     "react": "^19.3.0",
-    "react-day-picker": "^10.0.1",
+    "react-day-picker": "^10.0.2",
     "react-dom": "^19.3.0",
     "react-router-dom": "^7.18.4"
   },
